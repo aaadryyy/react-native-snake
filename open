@@ -1,0 +1,2 @@
+export ANDROID_SDK=/Users/Adrien/Library/Android/sdk
+export PATH=/Users/Adrien/Library/Android/sdk:$PATH
