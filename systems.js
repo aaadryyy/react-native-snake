@@ -10,21 +10,31 @@ const GameLoop = (entities, { touches, dispatch, events }) => {
     let food = entities.food;
     let tail = entities.tail;
 
+    const headUrl = {
+        up: require('./assets/arrow_up.png'),
+        down: require('./assets/arrow_down.png'),
+        left: require('./assets/arrow_left.png'),
+        right: require('./assets/arrow_right.png'),
+      }
 
     if (events.length){
         for(let i=0; i<events.length; i++){
             if (events[i].type === "move-down" && head.yspeed != -1){
                 head.yspeed = 1;
                 head.xspeed = 0;
+                head.headUrl= headUrl.down
             } else if (events[i].type === "move-up" && head.yspeed != 1){
                 head.yspeed = -1;
                 head.xspeed = 0;
+                head.headUrl= headUrl.up
             } else if (events[i].type === "move-left" && head.xspeed != 1){
                 head.yspeed = 0;
                 head.xspeed = -1;
+                head.headUrl= headUrl.left
             } else if (events[i].type === "move-right" && head.xspeed != -1){
                 head.yspeed = 0;
                 head.xspeed = 1;
+                head.headUrl= headUrl.right
             }
         }
     }

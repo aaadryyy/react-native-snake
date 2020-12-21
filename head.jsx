@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Image} from "react-native";
 
 class Head extends Component {
     constructor(props){
@@ -10,7 +10,18 @@ class Head extends Component {
         const x = this.props.position[0];
         const y = this.props.position[1];
         return (
-            <View style={[styles.finger, { width: this.props.size, height: this.props.size, left: x * this.props.size, top: y * this.props.size }]} />
+          <>
+            <Image         
+              source={this.props.headUrl}
+              style={[styles.finger,
+               { 
+                width: this.props.size, 
+                height: this.props.size, 
+                left: x * this.props.size, 
+                top: y * this.props.size 
+               }]}
+            />
+          </>
         );
     }
 }

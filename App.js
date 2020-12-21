@@ -32,7 +32,14 @@ export default class SnakeApp extends Component {
 
     reset = () => {
         this.engine.swap({
-            head: { position: [0,  0], xspeed: 1, yspeed: 0, nextMove: 10, updateFrequency: 10, size: 20, renderer: <Head />},
+            head: { position: [0,  0], 
+              xspeed: 1, 
+              yspeed: 0, 
+              nextMove: 10, 
+              updateFrequency: 10, 
+              size: 20, 
+              headUrl:require("./assets/arrow_right.png"),
+              renderer: <Head />},
             food: { position: [this.randomBetween(0, Constants.GRID_SIZE - 1), this.randomBetween(0, Constants.GRID_SIZE - 1)], size: 20, renderer: <Food />},
             tail: { size: 20, elements: [], renderer: <Tail /> }
         });
@@ -49,7 +56,14 @@ export default class SnakeApp extends Component {
                     style={[{ width: this.boardSize, height: this.boardSize, backgroundColor: '#ffffff', flex: null }]}
                     systems={[ GameLoop ]}
                     entities={{
-                        head: { position: [0,  0], xspeed: 1, yspeed: 0, nextMove: 10, updateFrequency: 10, size: 20, renderer: <Head />},
+                        head: { position: [0,  0], 
+                        xspeed: 1, 
+                        yspeed: 0, 
+                        nextMove: 10, 
+                        updateFrequency: 10, 
+                        size: 20, 
+                        headUrl:require("./assets/arrow_right.png"),
+                        renderer: <Head />},
                         food: { position: [this.randomBetween(0, Constants.GRID_SIZE - 1), this.randomBetween(0, Constants.GRID_SIZE - 1)], size: 20, renderer: <Food />},
                         tail: { size: 20, elements: [], renderer: <Tail /> }
                     }}

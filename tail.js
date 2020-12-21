@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import Constants from './Constants';
 
 class Tail extends Component {
@@ -10,7 +10,7 @@ class Tail extends Component {
     render() {
 
         let tailList = this.props.elements.map((el, idx) => {
-            return <View key={idx} style={{ width: this.props.size, height: this.props.size, position: 'absolute', left: el[0] * this.props.size, top: el[1] * this.props.size, backgroundColor: 'blue' }} />
+            return <Image source={require("./assets/food.png")} key={idx} style={{ width: this.props.size, height: this.props.size, position: 'absolute', left: el[0] * this.props.size, top: el[1] * this.props.size, backgroundColor: 'blue' }} />
         });
 
         return (

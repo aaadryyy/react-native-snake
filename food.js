@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Image } from "react-native";
 
 class Food extends Component {
     constructor(props){
@@ -11,7 +11,15 @@ class Food extends Component {
         const x = this.props.position[0];
         const y = this.props.position[1];
         return (
-            <View style={[styles.finger, { width: this.props.size, height: this.props.size, left: x * this.props.size, top: y * this.props.size }]} />
+            <Image 
+            source={require('./assets/food.png')}
+            style={
+                [styles.finger, 
+                { width: this.props.size, 
+                height: this.props.size, 
+                left: x * this.props.size, 
+                top: y * this.props.size }]
+                } />
         );
     }
 }
